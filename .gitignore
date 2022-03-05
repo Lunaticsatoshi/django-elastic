@@ -127,4 +127,5 @@ dist
 dist/
 
 pg-data/
+es-data/
 redis-data
