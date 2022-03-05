@@ -1,3 +1,2 @@
-FROM docker.elastic.co/elasticsearch/elasticsearch:7.5.2
-RUN /usr/share/elasticsearch/bin/plugin install royrusso/elasticsearch-HQ
+FROM docker.elastic.co/elasticsearch/elasticsearch:7.11.0
 USER elasticsearch
