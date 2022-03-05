@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  server:
+    build: 
+      context: .
+      dockerfile: docker/server/Dockerfile.dev
+    depends_on:
+      - elasticsearch
+      - postgres
+    volumes:
+      - ./server:/app
+      - ./docker:/app/docker
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./server/.env
+    networks:
+      - medika-bazaar-app
+    restart: unless-stopped
+    command: ./docker/server/run.dev.sh
+
+  postgres:
+    image: postgres:14.2-alpine3.15
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=devto
+    volumes:
+      - ./pg-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - medika-bazaar-app
+    restart: unless-stopped
+
+  elasticsearch:
+    build:
+      context: .
+      dockerfile: ./docker/elasticsearch/Dockerfile
+    volumes:
+      - ./es-data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - xpack.security.enabled=false
+      - "discovery.type=single-node"
+    networks:
+      - medika-bazaar-app
+    restart: unless-stopped
+
+
+networks:
+  medika-bazaar-app:
+    driver: bridge
+
+
+volumes:
+  pg-data:
+    driver: local
+  es-data:
+    driver: local
