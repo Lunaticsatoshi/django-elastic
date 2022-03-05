@@ -9,6 +9,7 @@ djangorestframework = "*"
 markdown = "*"
 django-elasticsearch-dsl = "*"
 django-elasticsearch-dsl-drf = "*"
+django-environ = "*"
 
 [dev-packages]
 
