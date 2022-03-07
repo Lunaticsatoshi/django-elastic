@@ -34,6 +34,8 @@ django-environ==0.8.1
 
 django-nine==0.2.5
 
+django-reset-migrations==0.4.0
+
 django==4.0.3
 
 djangorestframework==3.13.1
