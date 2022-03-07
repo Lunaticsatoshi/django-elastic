@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'reset_migrations',
     'django_elasticsearch_dsl',
     'django_elasticsearch_dsl_drf',
+    
+    'product',
 ]
 
 # Elasticsearch configuration
