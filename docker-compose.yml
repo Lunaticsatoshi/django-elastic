@@ -25,7 +25,7 @@ services:
     environment:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_USER=postgres
-      - POSTGRES_DB=devto
+      - POSTGRES_DB=medikabazaar
     volumes:
       - ./pg-data:/var/lib/postgresql/data
     ports:
