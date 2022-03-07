@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 # Elasticsearch configuration
 ELASTICSEARCH_DSL = {
     'default': {
-        'hosts': env.db('ELASTICSEARCH_URL', default='http://localhost:9200'),
+        'hosts': env('ELASTICSEARCH_URL', default='elasticsearch:9200'),
     },
 }
 
