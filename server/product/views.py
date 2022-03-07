@@ -9,7 +9,7 @@ from .documents import ProductDocument
 
 # Create your views here.
 
-class MovieSearchWithESViewSet(DocumentViewSet):
+class ProductSearchWithESViewSet(DocumentViewSet):
     """search products via elastic search index"""
     document = ProductDocument
     serializer_class = ProductDocumentSerializer
