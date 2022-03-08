@@ -1,12 +1,10 @@
-# Medika Bazaar Test
-A repository to host test project for medika bazaar.
+# Django Elastic
+A repository to host a demonstartion for using Elastic search with django.
 
 
 ### 🏗️ Built With
 
 <div>
-
-[<img src="https://img.shields.io/badge/-Next-FFFFFF?style=for-the-badge&labelColor=black&logo=nextdotjs&logoColor=white">](https://nextjs.org/)
 
 [<img src="https://img.shields.io/badge/-SCSS-cc6699?style=for-the-badge&labelColor=black&logo=sass&logoColor=cc6699">](https://sass-lang.com/)
 
@@ -104,4 +102,20 @@ python manage.py createsuperuser
 ```bash
 # run django development server
 python manage.py runserver
+```
+
+## 🧩 Getting Started with Client
+
+To get a local copy up and running follow these simple steps.
+
+1 Install dependencies
+
+```sh
+yarn install
+```
+
+## Start
+
+```
+npm start
 ```
