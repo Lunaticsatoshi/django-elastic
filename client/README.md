@@ -1,19 +1,21 @@
-# Django Elastic Client
+# client
 
 A Riot js client for Django elastic app
 
-## 🧩 Getting Started
+## Start
 
-To get a local copy up and running follow these simple steps.
-
-1 Install dependencies
-
-```sh
-yarn install
+```
+npm start
 ```
 
-2. Run the dev server
+## Test
 
-```sh
-yarn dev
+```
+npm test
+```
+
+## Build
+
+```
+npm run build
 ```
