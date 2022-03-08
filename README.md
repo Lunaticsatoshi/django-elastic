@@ -1,5 +1,5 @@
-# Medika Bazaar Test
-A repository to host test project for medika bazaar.
+# Django Elastic
+A repository to host test project for demonstrating elasticsearch with django.
 
 
 ### 🏗️ Built With
