@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server"
+  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^8.2.3",
