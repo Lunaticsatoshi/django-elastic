@@ -2,7 +2,7 @@ from django.urls import path
 
 from .views import ProductSearchWithESViewSet, get_all_products, ProductCreateApiView, ProductUpdateApiView, ProductDeleteApiView
 
-url_patterns = [
+urlpatterns = [
     path('products/', ProductSearchWithESViewSet),
     path('products/all/', get_all_products),
     path('products/create/', ProductCreateApiView.as_view()),

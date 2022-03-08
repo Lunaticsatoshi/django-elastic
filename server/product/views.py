@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from rest_framework.views import APIView
 from rest_framework.generics import GenericAPIView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from elasticsearch_dsl import Q
 from django_elasticsearch_dsl_drf.viewsets import DocumentViewSet
 from django_elasticsearch_dsl_drf.filter_backends import SearchFilterBackend
 
@@ -12,21 +14,24 @@ from .documents import ProductDocument
 
 # Create your views here.
 
-class ProductSearchWithESViewSet(DocumentViewSet):
+class ProductSearchWithESViewSet(APIView):
     """search products via elastic search index"""
-    document = ProductDocument
+    search_document = ProductDocument
     serializer_class = ProductDocumentSerializer
     
-    filter_backends = [SearchFilterBackend]
-    
-    search_fields = [
-        'name',
-        'description',
-    ]
-    
-    filter_fields = {
-        'name': 'name',
-    }
+    def get(self, request, query):
+        try:
+            q = Q('multi_match', query=query, fields=['name', 'description'], fuzziness='auto')
+            
+            search = self.search_document.search().query(q)
+            search_response = search.execute()
+            
+            products_serializer = self.serializer_class(search_response, many=True)
+            
+            return Response({ 'message': 'Sucessfully retrieved data', 'data': products_serializer.data }, status=status.HTTP_200_OK)
+        except Exception as e:
+            print(e)
+            return Response({ 'message': 'Something went wrong' }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class ProductCreateApiView(GenericAPIView):
