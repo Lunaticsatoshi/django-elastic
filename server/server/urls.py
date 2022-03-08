@@ -21,12 +21,12 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="Dev.to Clone API",
+      title="Django Elastic API",
       default_version='v1',
       description="A Django backend api for django elastic",
       terms_of_service="https://www.google.com/policies/terms/",
       contact=openapi.Contact(email="deysarkersudeep@gmail.com"),
-      license=openapi.License(name="GPL License"),
+      license=openapi.License(name="MIT License"),
    ),
    public=True,
    permission_classes=[permissions.AllowAny],
