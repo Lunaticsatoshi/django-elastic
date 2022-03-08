@@ -17,7 +17,7 @@ module.exports = {
 				test: /\.tag$/,
 				exclude: /node_modules/,
 				loader: "riot-tag-loader",
-				query: {
+				options: {
 					type: "es6", // transpile the riot tags using babel
 					hot: true,
 				},
