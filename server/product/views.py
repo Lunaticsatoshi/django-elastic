@@ -53,6 +53,7 @@ class ProductCreateApiView(GenericAPIView):
 class ProductUpdateApiView(GenericAPIView):
     """update products via api"""
     serializer_class = ProductSerializer
+    queryset = []
     
     def put(self, request, pk):
         product = Product.objects.get(pk=pk)
@@ -73,6 +74,7 @@ class ProductUpdateApiView(GenericAPIView):
 class ProductDeleteApiView(GenericAPIView):
     """delete products via api"""
     serializer_class = ProductSerializer
+    queryset = []
     
     def delete(self, request, pk):
         try:
