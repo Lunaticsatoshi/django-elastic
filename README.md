@@ -30,9 +30,9 @@ To get a local copy up and running follow these simple steps.
 1. Clone the repository using the following command
 
 ```bash
-git clone https://github.com/Lunaticsatoshi/dev-to-clone.git
+git clone https://github.com/Lunaticsatoshi/django-elastic.git
 # After cloning, move into the directory having the project files using the change directory command
-cd dev-to-clone
+cd django-elastic
 ```
 
 ### Starting the development server with docker 🐳
