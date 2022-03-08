@@ -105,3 +105,18 @@ python manage.py createsuperuser
 # run django development server
 python manage.py runserver
 ```
+
+
+### Run Client
+
+1 Install dependencies
+
+```sh
+yarn install
+```
+
+2. Run the dev server
+
+```sh
+yarn dev
+```
