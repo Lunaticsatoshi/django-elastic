@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django_elasticsearch_dsl',
     'django_elasticsearch_dsl_drf',
     
-    'product',
+    'product.apps.ProductConfig',
 ]
 
 # Elasticsearch configuration
