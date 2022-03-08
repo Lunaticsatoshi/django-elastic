@@ -1,5 +1,5 @@
-# Django Elastic
-A repository to host test project for demonstrating elasticsearch with django.
+# Medika Bazaar Test
+A repository to host test project for medika bazaar.
 
 
 ### 🏗️ Built With
@@ -30,9 +30,9 @@ To get a local copy up and running follow these simple steps.
 1. Clone the repository using the following command
 
 ```bash
-git clone https://github.com/Lunaticsatoshi/django-elastic.git
+git clone https://github.com/Lunaticsatoshi/dev-to-clone.git
 # After cloning, move into the directory having the project files using the change directory command
-cd django-elastic
+cd dev-to-clone
 ```
 
 ### Starting the development server with docker 🐳
@@ -104,19 +104,4 @@ python manage.py createsuperuser
 ```bash
 # run django development server
 python manage.py runserver
-```
-
-
-### Run Client
-
-1 Install dependencies
-
-```sh
-yarn install
-```
-
-2. Run the dev server
-
-```sh
-yarn dev
 ```
