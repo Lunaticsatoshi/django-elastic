@@ -1,0 +1,48 @@
+<task-form>
+  <div>
+    <div class="mb-3">
+        <label class="form-label">Product Name</label>
+        <input onkeyup={onChange} type="text" name="name" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Product Price</label>
+        <input onkeyup={onChange} type="text" name="price" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Product Quantity</label>
+        <input onkeyup={onChange} type="number" name="quantity" class="form-control">
+    </div>
+    <button class="btn btn-primary my-2" onclick={handleNewproduct}>Submit</button>
+  </div>
+
+  <script>
+  import { addProduct } from "../../../actions";
+
+  let store = this.opts.store;
+    export default {
+        onBeforeMount(props, state) {
+            // initial state
+            this.state = {
+                name: '',
+                price: '',
+                quantity: 0,
+                }
+        },
+        onChange(e) {
+            this.update({
+                [e.target.name]: e.target.value
+            })
+        },
+        handleNewproduct(e) {
+            e.preventDefault();
+            const newProduct = {
+                name: this.state.name,
+                price: this.state.price,
+                quantity: this.state.quantity
+            }
+            console.log(newProduct)
+            store.dispatch(addProduct(task));
+        }
+    }
+  </script>
+</task-form>
