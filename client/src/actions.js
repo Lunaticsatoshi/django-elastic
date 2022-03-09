@@ -2,7 +2,7 @@ import { API_URL } from "./constants";
 
 const ERROR_MESSAGE = "Something went wrong, please try again.";
 
-const actions = {
+export const actions = {
 	loadProducts: () => {
 		return (dispatch, getState) => {
 			dispatch({ type: "TOGGLE_LOADING", data: true });
