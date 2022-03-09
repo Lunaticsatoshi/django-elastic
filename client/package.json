@@ -38,6 +38,8 @@
 		"@riotjs/hot-reload": "^6.0.0",
 		"@riotjs/lazy": "^2.0.1",
 		"@riotjs/route": "^8.0.0",
+		"redux": "^4.1.2",
+		"redux-thunk": "^2.4.1",
 		"riot": "^6.0.2"
 	}
 }
