@@ -16,9 +16,9 @@
   </div>
 
   <script>
-  import { addProduct } from "../../../actions";
+  import actions from "../../../actions";
 
-  let store = this.opts.store;
+//   let store = this.opts.store;
     export default {
         onBeforeMount(props, state) {
             // initial state
@@ -41,7 +41,7 @@
                 quantity: this.state.quantity
             }
             console.log(newProduct)
-            store.dispatch(addProduct(task));
+            store.dispatch(actions.addProduct(task));
         }
     }
   </script>

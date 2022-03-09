@@ -2,10 +2,9 @@ import { API_URL } from "./constants";
 
 const ERROR_MESSAGE = "Something went wrong, please try again.";
 
-export const actions = {
+const actions = {
 	loadProducts: () => {
 		return (dispatch, getState) => {
-			dispatch({ type: "TOGGLE_LOADING", data: true });
 			return fetch(`${API_URL}/products/all/`)
 				.then((response) => response.json())
 				.then((data) => {
@@ -114,3 +113,5 @@ export const actions = {
 		};
 	},
 };
+
+export default actions
