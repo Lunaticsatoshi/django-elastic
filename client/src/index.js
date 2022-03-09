@@ -10,22 +10,34 @@ import {
 	PRODUCTS_LOADED,
 	TOGGLE_LOADING,
 	PRODUCT_ADDED,
+	PRODUCT_UPDATED,
+	PRODUCT_DELETED,
 	SHOW_ERROR,
 	HIDE_ERROR,
 } from "./constants";
 
-const reducer = function (state = { tasks: [] }, action) {
+const reducer = function (state = { products: [] }, action) {
 	console.log(action);
 	switch (action.type) {
 		case PRODUCTS_LOADED:
-			return Object.assign({}, state, { tasks: action.data });
+			return Object.assign({}, state, { products: action.data });
 
 		case TOGGLE_LOADING:
 			return Object.assign({}, state, { isLoading: action.data });
 
 		case PRODUCT_ADDED:
 			return Object.assign({}, state, {
-				tasks: state.tasks.concat(action.data),
+				products: state.products.concat(action.data),
+			});
+
+		case PRODUCT_UPDATED:
+			return Object.assign({}, state, {
+				products: state.products.concat(action.data),
+			});
+
+		case PRODUCT_DELETED:
+			return Object.assign({}, state, {
+				products: state.products.concat(action.data),
 			});
 
 		case SHOW_ERROR:
